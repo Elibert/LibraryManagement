@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>      
+
+<menuitem name='Biblioteke' id='menu_kryesore' sequence='10'/>
+
+     <menuitem name='Kerkesa' id='menu_kerkesa' parent='menu_kryesore' sequence='0'/>
+     <menuitem name='Libri' id='menu_general' sequence='10'/>
+     
+       <record id="view_partner_form" model="ir.ui.view">
+            <field name="name">regjistrimi.librit.form</field>
+            <field name="model">regjistrimi.librit</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Test">
+                    <group>
+                        <field name="autor"/>
+                        <field name="titull"/>
+                        <field name="kategori"/>
+                        <field name="status"/>
+                        <field name="kopje"/>
+                        <field name="employee"/>
+                        <field name="ref1"/>
+                        <field name="ref2"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+       <record id="view_partner_tree" model="ir.ui.view">
+            <field name="name">regjistrimi.librit.tree</field>
+            <field name="model">regjistrimi.librit</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Test">
+                        <field name="autor"/>
+                        <field name="titull"/>
+                        <field name="kategori"/>
+                        <field name="status"/>
+                        <field name="kopje"/>
+                        <field name="employee"/>
+                        <field name="ref1"/>
+                        <field name="ref2"/>
+                </tree>
+            </field>
+        </record>
+    <record id="view_partner_filter" model="ir.ui.view">
+            <field name="name">regjistrimi.librit.search</field>
+            <field name="model">regjistrimi.librit</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Test">      
+                        <field name="autor"/>
+                        <field name="titull"/>
+                        <field name="kategori"/>
+                        <field name="status"/>
+                        <field name="kopje"/>
+                        <field name="employee"/>
+                        <field name="ref1"/>
+                        <field name="ref2"/>
+                </search>
+            </field>
+        </record>
+            
+            <record id="test2" model="ir.actions.act_window">
+            <field name="name">Kerkesa</field>
+            <field name="res_model">regjistrimi.librit</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_partner_filter"/>
+            </record>
+
+ <menuitem parent='menu_kerkesa' id='menu_course' action='test2' sequence='10'/>
+ 
+      <menuitem name='Libra' id='menu_libra' parent='menu_kryesore' sequence='1'/>
+     <menuitem name='Dhenia Librit' id='menu_general1' sequence='10'/>
+     
+       <record id="view_partner_form1" model="ir.ui.view">
+            <field name="name">dhenie.libri.form</field>
+            <field name="model">dhenie.libri</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Test">
+                    <group>
+                        <field name="autor"/>
+                        <field name="titull"/>
+                        <field name="lexues"/>
+                        <field name="dataKerkeses"/>
+                        <field name="dataDorezimit"/>
+                        <field name="lexim_salle"/>
+                        <field name="employee2"/>
+                        <field name="status1"/>
+                        <field name="ref3" on_change="onchange_ref3(ref3)"/>
+                        <field name="ref4"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+       <record id="view_partner_tree1" model="ir.ui.view">
+            <field name="name">dhenie.libri.tree</field>
+            <field name="model">dhenie.libri</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Test">
+                        <field name="autor"/>
+                        <field name="titull"/>
+                        <field name="lexues"/>
+                        <field name="dataKerkeses"/>
+                        <field name="dataDorezimit"/>
+                        <field name="lexim_salle"/>
+                        <field name="employee2"/>
+                        <field name="status1"/>
+                        <field name="ref3" on_change="onchange_ref3(ref3)"/>
+                        <field name="ref4"/>
+                </tree>
+            </field>
+        </record>
+    <record id="view_partner_filter1" model="ir.ui.view">
+            <field name="name">dhenie.libri.search</field>
+            <field name="model">dhenie.libri</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Test">      
+                        <field name="autor"/>
+                        <field name="titull"/>
+                        <field name="lexues"/>
+                        <field name="dataKerkeses"/>
+                        <field name="dataDorezimit"/>
+                        <field name="lexim_salle"/>
+                        <field name="employee2"/>
+                        <field name="status1"/>
+                        <field name="ref3" on_change="onchange_ref3(ref3)"/>
+                        <field name="ref4"/>
+                </search>
+            </field>
+        </record>
+            
+            <record id="test3" model="ir.actions.act_window">
+            <field name="name">Libra</field>
+            <field name="res_model">dhenie.libri</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_partner_filter1"/>
+            </record>
+
+ <menuitem parent='menu_libra' id='menu_course1' action='test3' sequence='10'/>
+ 
+     <menuitem name='Lexues' id='menu_lexues' parent='menu_kryesore' sequence='2'/>
+     <menuitem name='Lexues' id='menu_general2' sequence='10'/>
+     
+       <record id="view_partner_form2" model="ir.ui.view">
+            <field name="name">lexues.libra.form</field>
+            <field name="model">lexues.libra</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Test">
+                    <group>
+                        <field name="emri"/>
+                        <field name="mbiemri"/>
+                        <field name="datelindje"/>
+                        <field name="data_regjistrimit"/>
+                        <field name="data_skadences"/>
+                        <field name="aktiv"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+       <record id="view_partner_tree2" model="ir.ui.view">
+            <field name="name">lexues.libra.tree</field>
+            <field name="model">lexues.libra</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Test">
+                        <field name="emri"/>
+                        <field name="mbiemri"/>
+                        <field name="datelindje"/>
+                        <field name="data_regjistrimit"/>
+                        <field name="data_skadences"/>
+                        <field name="aktiv"/>
+                </tree>
+            </field>
+        </record>
+    <record id="view_partner_filter2" model="ir.ui.view">
+            <field name="name">lexues.libra.search</field>
+            <field name="model">lexues.libra</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Test">      
+                        <field name="emri"/>
+                        <field name="mbiemri"/>
+                        <field name="datelindje"/>
+                        <field name="data_regjistrimit"/>
+                        <field name="data_skadences"/>
+                        <field name="aktiv"/>
+                </search>
+            </field>
+        </record>
+            
+            <record id="test4" model="ir.actions.act_window">
+            <field name="name">Lexues</field>
+            <field name="res_model">lexues.libra</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_partner_filter2"/>
+            </record>
+
+ <menuitem parent='menu_lexues' id='menu_course2' action='test4' sequence='10'/>
+ 
+      <menuitem name='Konfigurime' id='menu_konf' parent='menu_kryesore' sequence='0'/>
+     <menuitem name='Punonjes' id='menu_general3' sequence='10'/>
+     
+       <record id="view_partner_form3" model="ir.ui.view">
+            <field name="name">stafi.punonjes.form</field>
+            <field name="model">stafi.punonjes.libra</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Test">
+                    <group>
+                        <field name="emri"/>
+                        <field name="mbiemri"/>
+                        <field name="roli"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+       <record id="view_partner_tree3" model="ir.ui.view">
+            <field name="name">stafi.punonjes.tree</field>
+            <field name="model">stafi.punonjes</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Test">
+                        <field name="emri"/>
+                        <field name="mbiemri"/>
+                        <field name="roli"/>
+                </tree>
+            </field>
+        </record>
+    <record id="view_partner_filter3" model="ir.ui.view">
+            <field name="name">stafi.punonjes.search</field>
+            <field name="model">stafi.punonjes</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Test">      
+                        <field name="emri"/>
+                        <field name="mbiemri"/>
+                        <field name="roli"/>
+                </search>
+            </field>
+        </record>
+            
+            <record id="test5" model="ir.actions.act_window">
+            <field name="name">Punonjes</field>
+            <field name="res_model">stafi.punonjes</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_partner_filter3"/>
+            </record>
+
+ <menuitem parent='menu_konf' id='menu_course3' action='test5' sequence='10'/>
+ 
+             <record id="regjistro_kerkese" model="ir.actions.act_window">
+            <field name="name">Regjistro</field>
+            <field name="res_model">regjistrimi.librit</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="search_view_id" ref="view_partner_filter"/>
+            </record>
+
+ <menuitem parent='menu_kerkesa' id='menu1' action='regjistro_kerkese' sequence='10'/>
+ 
+             <record id="regjistro_liber" model="ir.actions.act_window">
+            <field name="name">Regjistro</field>
+            <field name="res_model">dhenie.libri</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="search_view_id" ref="view_partner_filter1"/>
+            </record>
+
+ <menuitem parent='menu_libra' id='menu2' action='regjistro_liber' sequence='10'/>
+ 
+            <record id="regjistro_lexues" model="ir.actions.act_window">
+            <field name="name">Regjistro</field>
+            <field name="res_model">lexues.libra</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="search_view_id" ref="view_partner_filter2"/>
+            </record>
+
+ <menuitem parent='menu_lexues' id='menu3' action='regjistro_lexues' sequence='10'/>
+
+
+ 
+     </data>
+</openerp>
